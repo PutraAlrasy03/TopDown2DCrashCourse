@@ -310,8 +310,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577301912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0032, y: -0.0553, z: 0}
+  m_LocalScale: {x: 1.004004, y: 0.9424627, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 219919965}
@@ -393,7 +393,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -4549,6 +4549,10 @@ PrefabInstance:
     - target: {fileID: 3743355086310554773, guid: 98be6ca0c6c14de4182bb338172af6fd, type: 3}
       propertyPath: m_DefaultActionMap
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661784003225755784, guid: 98be6ca0c6c14de4182bb338172af6fd, type: 3}
+      propertyPath: collisonOffset
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 6784066761442287962, guid: 98be6ca0c6c14de4182bb338172af6fd, type: 3}
       propertyPath: m_RootOrder
