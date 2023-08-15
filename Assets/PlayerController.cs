@@ -35,13 +35,13 @@ public class PlayerController : MonoBehaviour
         {
             bool success = TryMove(movementInput);
 
-            if (!success)
+            if (!success )
             {
                 success = TryMove(new Vector2(movementInput.x,0));
-                if (!success)
-                {
-                    success = TryMove(new Vector2(0, movementInput.y));
-                }
+            }
+            if (!success )
+            {
+                success = TryMove(new Vector2(0, movementInput.y));
             }
             animator.SetBool("isMoving", success);
         }
@@ -62,7 +62,9 @@ public class PlayerController : MonoBehaviour
     }
 
     private bool TryMove(Vector2 direction)
+
     {
+        if (direction != Vector2.zero){ 
         int count = rb.Cast(
                 direction,
                 movementFilter,
@@ -74,7 +76,12 @@ public class PlayerController : MonoBehaviour
         {
             rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
             return true;
-        }else
+        } else
+        {
+            return false;
+        }
+    }
+        else
         {
             return false;
         }
