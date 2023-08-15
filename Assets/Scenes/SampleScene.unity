@@ -4550,6 +4550,10 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4652863901054378528, guid: 98be6ca0c6c14de4182bb338172af6fd, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5661784003225755784, guid: 98be6ca0c6c14de4182bb338172af6fd, type: 3}
       propertyPath: collisonOffset
       value: 0.005

@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movementInput;
     Rigidbody2D rb;
+    Animator animator;
+    SpriteRenderer spriteRenderer;
+
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -20,6 +23,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
    
@@ -38,6 +43,21 @@ public class PlayerController : MonoBehaviour
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
             }
+            animator.SetBool("isMoving", success);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+
+        // Set direction of sprite to movement direction
+        if (movementInput.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (movementInput.x > 0)
+        {
+            spriteRenderer.flipX = false;
         }
     }
 
