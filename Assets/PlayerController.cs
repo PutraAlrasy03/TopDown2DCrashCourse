@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float collisonOffset = 0.05f;
     public float attackCooldown = 0.5f; // Adjust as needed
     private float lastAttackTime = 0f;
+    public SwordAttack swordAttack;
 
 
 
@@ -60,10 +61,12 @@ public class PlayerController : MonoBehaviour
             if (movementInput.x < 0)
             {
                 spriteRenderer.flipX = true;
+                
             }
             else if (movementInput.x > 0)
             {
                 spriteRenderer.flipX = false;
+                
             }
         }
     }
@@ -106,6 +109,23 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         animator.SetTrigger("swordAttack");
+
+    }
+
+    public void SwordAttack()
+    {
+        LockMovement();
+        if(spriteRenderer.flipX == true)
+        {
+            swordAttack.AttackLeft();
+        }
+        else
+        {
+            swordAttack.AttackRight();
+        }
+        
+
+        
     }
 
     public void LockMovement()
